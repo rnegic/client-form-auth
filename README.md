@@ -1,69 +1,41 @@
-# React + TypeScript + Vite
+## Cтек
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **React 19** + **TypeScript**
+- **Vite** - сборщик
+- **React Router**
+- **TanStack Query** - кеширование данных
+- **Mantine** - UI
+- **CSS Modules** - стилизация
+- **Formik** - управление формами на страница создания
+- **React Hook Form** - управление формами на странице редактирования
+- **Yup** - валидация
+- **Tabler Icons** - иконки
 
-Currently, two official plugins are available:
+Проект построен на архитектуре FSD
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Функциональность
 
-## Expanding the ESLint configuration
+### Маршруты
+- `/` - Главная страница с таблицей пользователей
+- `/login` - Страница авторизации
+- `/user/create` - Создание нового пользователя (Formik)
+- `/user/edit/:id` - Редактирование пользователя (React Hook Form)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## API
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Приложение настроено для работы с бэком на `localhost:4000` через прокси.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Эндпоинты
+- `POST /api/v1/auth/login` - авторизация
+- `POST /api/v1/auth/logout` - выход
+- `GET /api/v1/auth/me` - текущий пользователь
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `GET /api/v1/users` - список пользователей
+- `POST /api/v1/users` - создание пользователя
+- `GET /api/v1/users/:id` - получение пользователя
+- `PATCH /api/v1/users/:id` - обновление пользователя
+- `DELETE /api/v1/users/:id` - удаление пользователя
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Установка зависимостей и запуск
+- npm i
+- npm run dev

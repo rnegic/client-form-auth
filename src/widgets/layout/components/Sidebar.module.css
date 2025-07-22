@@ -1,0 +1,25 @@
+.navItem {
+  text-decoration: none;
+  color: var(--mantine-color-dark-6);
+  border-radius: var(--mantine-radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.navItem:hover {
+  background-color: var(--mantine-color-gray-1);
+}
+
+.navItem.active {
+  background-color: var(--mantine-color-blue-0);
+  color: var(--mantine-color-blue-6);
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}

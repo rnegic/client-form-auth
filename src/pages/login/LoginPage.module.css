@@ -1,0 +1,12 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-indigo-6) 100%);
+}
+
+.title {
+  color: var(--mantine-color-dark-6);
+  margin-bottom: 2rem;
+}

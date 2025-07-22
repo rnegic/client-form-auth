@@ -1,0 +1,6 @@
+.container {
+  background: white;
+  border-radius: var(--mantine-radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--mantine-shadow-sm);
+}
